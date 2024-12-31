@@ -12,7 +12,7 @@ const proxyMiddleware = createProxyMiddleware({
   target: targetUrl,
   changeOrigin: true,
   pathRewrite: {
-    "^/conversation": "", // 可以根据需要重写路径，这里将 /api 前缀去掉
+    "^/conversation": "conversation", // 可以根据需要重写路径，这里将 /api 前缀去掉
   },
   onProxyReq: (proxyReq, req, res) => {
     console.log("Proxy request:", req.method, req.url);
